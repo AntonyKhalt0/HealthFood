@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'bootstrap'
+gem 'jquery-rails'
 gem 'pry'
 gem 'rubocop-rails', require: false
 gem 'slim-rails'

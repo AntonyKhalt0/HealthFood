@@ -1,0 +1,29 @@
+- flash.each do |key, value|
+  = content_tag :div, value, class: "flash #{key}"
+h2= 'HealthFood'
+div class='row px-3 g-2'
+  div class='col-2'
+    div class='card align-items-center'
+      h6= 'Ингредиенты'
+      = form_with url: root_path, method: :get do |f|
+        = f.fields_for :ingredients do |ingr_form|
+          - @ingredients.each do |ingredient|
+            div class='form-check'
+              = ingr_form.check_box ingredient.en_name, {}, true, nil
+              = ' '
+              = ingr_form.label ingredient.name
+        p
+          = f.submit 'Убрать', class: 'btn btn-danger'
+  div class='col g-2'
+    = form_with model: @order, method: :post do |f|
+      p
+        = f.label 'Ваше ФИО'
+        = ' '
+        = f.text_field :user_name
+      p = f.hidden_field :dishes_ids, value: @dishes.ids
+      p
+        = f.submit 'Создать заказ'
+      h5= 'Меню'
+      - @dishes.each do |dish|
+        div class='card align-items-center p-2'
+          p= dish.name
