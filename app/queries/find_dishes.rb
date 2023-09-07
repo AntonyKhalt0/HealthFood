@@ -15,7 +15,7 @@ class FindDishes
 
   def search(scope, params)
     forbidden_dish_ids = scope.eager_load(:ingredients)
-                              .where(ingredients: { en_name: params['ingredients'].keys })
+                              .where(ingredients: { en_name: params['ingredients']&.keys })
                               .ids
     scope.where.not(id: forbidden_dish_ids)
   end
