@@ -1,6 +1,10 @@
-- flash.each do |key, value|
-  = content_tag :div, value, class: "flash #{key}"
-h2= 'HealthFood'
+div class='row'
+  div class='col text-center'
+    h2= 'HealthFood'
+div class='row'
+  div class='col text-center'
+    - flash.each do |key, value|
+      = content_tag :div, value, class: "flash #{key}"
 div class='row px-3 g-2'
   div class='col-2'
     div class='card align-items-center'
@@ -23,7 +27,12 @@ div class='row px-3 g-2'
       p = f.hidden_field :dishes_ids, value: @dishes.ids
       p
         = f.submit 'Создать заказ'
-      h5= 'Меню'
+      div class='row'
+        div class='col text-center'
+          h5 = 'Меню'
       - @dishes.each do |dish|
         div class='card align-items-center p-2'
           p= dish.name
+        p
+    div class="digg_pagination"
+      p= will_paginate @dishes

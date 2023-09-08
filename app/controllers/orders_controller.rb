@@ -2,10 +2,7 @@
 
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
-    respond_to do |format|
-      format.json { render json: OrderSerializeService.new.call }
-    end
+    render json: dishes_count, each_serializer: DishesCountSerializer
   end
 
   def create
@@ -24,5 +21,12 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:user_name, :dishes_ids)
+  end
+
+  def dishes_count
+    Dish.joins(:orders)
+        .select('dishes.*, COUNT(*) AS orders_count')
+        .group('dishes.id')
+        .order('orders_count DESC')
   end
 end

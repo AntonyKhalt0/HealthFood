@@ -9,6 +9,6 @@ class DishesCountSerializer < ActiveModel::Serializer
   end
 
   def count
-    object.orders.count
+    object.orders_count
   end
 end
