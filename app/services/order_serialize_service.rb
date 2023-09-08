@@ -11,9 +11,12 @@ class OrderSerializeService
 
   def serialize_data
     orders = []
+
     dishes.each do |dish|
-      orders.push(DishesCountSerializer.new(dish).serializable_hash)
+      serialized_dish = DishesCountSerializer.new(dish).serializable_hash
+      orders.push(serialized_dish) unless serialized_dish[:count].zero?
     end
+
     sort_orders(orders)
   end
 

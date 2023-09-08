@@ -21,17 +21,44 @@ ingr_farsh = Ingredient.create!(name: 'Фарш курино-мясной', en_n
 ingr_tuna = Ingredient.create!(name: 'Тунец', en_name: :tuna)
 ingr_beef = Ingredient.create!(name: 'Говядина', en_name: :beef)
 
-dish1 = Dish.create(name: 'Запеканка с зеленой гречкой и сыром')
-dish1.ingredients.push(ingr_beef, ingr_vanil, ingr_pepper, ingr_udon, ingr_truf, ingr_slivki, ingr_oil, ingr_rayzh)
+dish = Dish.create(name: 'Запеканка с зеленой гречкой и сыром')
+dish.ingredients.push(ingr_beef, ingr_vanil, ingr_pepper, ingr_udon, ingr_truf, ingr_slivki, ingr_oil, ingr_rayzh)
 
-dish2 = Dish.create(name: 'Салат из фунчозы')
-dish2.ingredients.push(ingr_spag, ingr_muka, ingr_truf, ingr_oil, ingr_udon)
+dish = Dish.create(name: 'Салат из фунчозы')
+dish.ingredients.push(ingr_spag, ingr_muka, ingr_truf, ingr_oil, ingr_udon)
 
-dish3 = Dish.create(name: 'Биточки из говядины с пюре')
-dish3.ingredients.push(ingr_tofu, ingr_tuna, ingr_kuraga, ingr_farsh, ingr_spag)
+dish = Dish.create(name: 'Биточки из говядины с пюре')
+dish.ingredients.push(ingr_tofu, ingr_tuna, ingr_kuraga, ingr_farsh, ingr_spag)
 
-dish4 = Dish.create(name: 'Постный борщ')
-dish4.ingredients.push(ingr_beef, ingr_ptitim)
+dish = Dish.create(name: 'Постный борщ')
+dish.ingredients.push(ingr_beef, ingr_ptitim)
 
-dish5 = Dish.create(name: 'Сырники с яблоком')
-dish5.ingredients.push(ingr_slivki, ingr_smorodina, ingr_tofu, ingr_pepper, ingr_eggs, ingr_farsh, ingr_vanil)
+dish = Dish.create(name: 'Сырники с яблоком')
+dish.ingredients.push(ingr_slivki, ingr_smorodina, ingr_tofu, ingr_pepper, ingr_eggs, ingr_farsh, ingr_vanil)
+
+dish = Dish.create(name: 'Окунь с травами и печеными кореньями')
+dish.ingredients.push(ingr_milk, ingr_beef)
+
+dish = Dish.create(name: 'Рисовая каша с бананом')
+dish.ingredients.push(ingr_eggs, ingr_vanil, ingr_tofu, ingr_udon, ingr_yog, ingr_truf)
+
+dish = Dish.create(name: 'Кефирный пудинг с вишней')
+dish.ingredients.push(ingr_muka, ingr_oil, ingr_smorodina, ingr_yog, ingr_tuna)
+
+dish = Dish.create(name: 'Куриные биточки с киноа')
+dish.ingredients.push(ingr_oil, ingr_udon, ingr_bakl, ingr_eggs, ingr_tuna, ingr_beef, ingr_truf)
+
+dish = Dish.create(name: 'Салат овощной с булгуром')
+dish.ingredients.push(ingr_beef)
+
+dish = Dish.create(name: 'Говядина, тушеная с рататуем')
+dish.ingredients.push(ingr_truf, ingr_ptitim, ingr_yog, ingr_tofu, ingr_smorodina, ingr_pepper, ingr_bakl, ingr_milk)
+
+dish = Dish.create(name: 'Сметанный чизкейк на печенье Мария')
+dish.ingredients.push(ingr_vanil, ingr_farsh, ingr_smorodina, ingr_muka, ingr_yog, ingr_slivki)
+
+dish = Dish.create(name: 'Куриные митболы с кус-кусом')
+dish.ingredients.push(ingr_spag)
+
+dish = Dish.create(name: 'Суп кукурузный')
+dish.ingredients.push(ingr_truf, ingr_vanil, ingr_yog, ingr_bakl)

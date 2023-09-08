@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FindDishes
+class DishesFilters
   attr_reader :initial_scope
 
   def initialize(initial_scope)
